@@ -54,3 +54,28 @@ class Solution:
            if nums[i]==nums[i-1] and nums[i]==nums[i+1]:
                nums.pop(i+1)
        return len(nums)
+
+'''
+from typing import List
+
+class Solution:
+    def removeDuplicates(self, nums: List[int], limit: int) -> int:
+        if len(nums) <= limit:
+            return len(nums)
+
+        i = limit
+        while i < len(nums):
+            duplicate = True
+            for j in range(1, limit + 1):
+                if nums[i] != nums[i - j]:
+                    duplicate = False
+                    break
+
+            if duplicate:
+                nums.pop(i)
+            else:
+                i += 1
+
+        return len(nums)
+
+'''
